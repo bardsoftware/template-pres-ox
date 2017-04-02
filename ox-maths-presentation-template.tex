@@ -1,0 +1,138 @@
+%% If you have any problems using this template, please contact the author: %%
+%% timhosgood@gmail.com %%
+
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+
+%% Title slide formatting %%
+
+\pgfdeclareimage[width=\paperwidth]{titlebackground}{images/title-slide-background.png}
+\setbeamerfont{subtitle}{size=\tiny}
+\setbeamertemplate{title page}{
+    \begin{picture}(0,0)
+        \put(-28.5,-163){%
+            \pgfuseimage{titlebackground}
+        }
+        \put(0,-75){%
+            \begin{minipage}[b][4.5cm][t]{0.5\textwidth}
+                \color{white}
+                \usebeamerfont{title}
+                    {\inserttitle\\[0.9cm]}
+                \usebeamerfont{subtitle}
+                    {\insertauthor\par}
+                    {\insertinstitute\\[0.3cm]}
+                    {\insertdate}
+            \end{minipage}
+        }
+    \end{picture}
+}
+
+
+
+%% General slide formatting %%
+
+\definecolor{oxfordblue}{RGB}{4,30,66}
+
+\pgfdeclareimage[width=0.9cm]{oxfordlogo}{images/oxford-logo.png}
+\pgfdeclareimage[width=1cm]{mathslogo}{images/mathematics-logo.png}
+
+\setbeamertemplate{headline}
+{%
+    \begin{picture}(0,0)
+        \put(314,-50){%
+            \pgfuseimage{oxfordlogo}
+        }
+        \put(20,-55){%
+            \rule{320pt}{0.4pt}
+        }
+    \end{picture}
+}
+
+\setbeamertemplate{frametitle}
+{%
+    \begin{picture}(0,0)
+        \put(-8,-10){%
+            \normalsize\color{oxfordblue}\insertframetitle
+        }
+        \put(-7,-20){%
+            \tiny\color{oxfordblue}\insertframesubtitle
+        }
+    \end{picture}
+}
+
+\setbeamertemplate{footline}
+{%
+    \begin{picture}(0,0)
+        \put(20,30){%
+            \rule{320pt}{0.4pt}
+        }
+        \put(20,14){%
+            \pgfuseimage{mathslogo}
+        }
+        \put(100,14){%
+            \color{oxfordblue}\insertshortdate
+        }
+        \put(160,14){%
+            \color{oxfordblue}\insertshorttitle
+        }
+        \put(337,14){%
+            \color{oxfordblue}\insertpagenumber
+        }
+    \end{picture}%
+}
+
+
+
+%% Information (author, title, etc.) %%
+
+\title[Short version of title]{Title goes here and it can be very long if you want, and the length of lines can be adjusted} % short title for footer
+\author%
+{%
+    \sc{E. Noether}\\
+    \textit{Guest Lecturer}
+}
+\institute%
+{%
+    \textit{Mathematical Institute}\\
+    \textit{University of Oxford}
+}
+\date[PoM2015]{Presentation on mathematics, November 2015} % short date for footer
+
+
+
+%% Content of slides %%
+
+\begin{document}
+    \begin{frame}[plain]
+        \titlepage
+    \end{frame}
+    %
+    \begin{frame}
+        \frametitle{This is the first slide}
+        \framesubtitle{A bit more information about this}
+        
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+
+        Here is
+        \begin{itemize}
+            \item some text;
+            \item inline maths: $\mathcal{R}_C(D)=\oplus_{n\geqslant0}\mathcal{L}(nD)$;
+            \item and display maths:
+            \[
+                \operatorname{Tor}_i(\operatorname{colim}_\alpha M_\alpha, N)
+                = \operatorname{colim}_\alpha\operatorname{Tor}_i(M_\alpha,N)
+            \]
+        \end{itemize}
+
+    \end{frame}
+\end{document}
